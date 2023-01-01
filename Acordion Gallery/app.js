@@ -3,13 +3,16 @@ const acordions = document.querySelectorAll('.acordion');
 
 acordions.forEach(acordion => {
     acordion.addEventListener('click', e => {
-        removeActive();
+        removeActive(acordion);
         acordion.classList.add('active');
+        // acordion.classList.toggle('active');
     })
 })
 
-const removeActive = function(){
-acordions.forEach(acordion => {
-    acordion.classList.remove('active');
-} )
+const removeActive = function (acordion) {
+    acordions.forEach(item => {
+        if (item !== acordion) {
+            item.classList.remove('active');
+        }
+    })
 }

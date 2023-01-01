@@ -39,6 +39,7 @@ body {
     transition: all .3s ease-in;
     background-color: #fff;
     box-shadow: -8px 0 7px -5px rgba(0, 0, 0, 0.808);
+    overflow: hidden;
 }
 
 .acordion:first-child {
@@ -79,4 +80,10 @@ body {
     left: 30px;
     opacity: 1;
     cursor: pointer;
+}
+
+@media(max-width:720px){
+    .acordion:nth-child(4), .acordion:nth-child(5){
+        display: none;
+    }
 }
