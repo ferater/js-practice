@@ -10,7 +10,7 @@ var activeStep = 1;
 
 next.addEventListener('click', () => {
     activeStep++;
-    if(activeStep > steps.length) {
+    if (activeStep > steps.length) {
         activeStep = steps.length;
     }
     // console.log(activeStep)
@@ -19,10 +19,11 @@ next.addEventListener('click', () => {
 
 prev.addEventListener('click', () => {
     activeStep--;
-    if(activeStep < 1) {
+    if (activeStep < 1) {
         activeStep = 1;
     }
-    console.log(activeStep);
+    // console.log(activeStep);
+    stepUpdate();
 })
 
 
@@ -32,6 +33,12 @@ stepUpdate = () => {
             step.classList.add('active');
         } else {
             step.classList.remove('active');
+        }
+        if (steps.length == activeStep) {
+            next.disabled = true;
+            prev.disabled = false;
+        } else if(activeStep <= 1) {
+            next.disabled = false;
         }
     })
 }

@@ -91,4 +91,8 @@ body{
     transform: scale(.95);
 }
 
+.btn:disabled{
+    background-color: var(--progress-empty);
+}
+
 
