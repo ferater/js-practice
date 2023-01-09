@@ -7,7 +7,8 @@ let idx = 0;
 
 
 function type() {
-    let word = words[wordIndex];
+    const current = wordIndex % words.length;
+    let word = words[current];
 
     if (!isDeleting) {
         span.innerText = word.slice(0, idx);
@@ -17,9 +18,7 @@ function type() {
             wait = 1000;
             isDeleting = true;
         }
-    }
-
-    if (isDeleting) {
+    } else {
         idx--;
         span.innerText = word.slice(0, idx);
         if (idx < word.length) {
@@ -29,9 +28,6 @@ function type() {
                 wait = 500;
                 isDeleting = false;
                 wordIndex++;
-                if (wordIndex >= words.length) {
-                    wordIndex = 0;
-                }
             }
         }
     }
