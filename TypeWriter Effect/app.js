@@ -12,9 +12,9 @@ function type() {
     if (!isDeleting) {
         span.innerText = word.slice(0, idx);
         idx++;
-        wait = 100;
+        wait = 50;
         if (idx >= word.length + 1) {
-            wait = 2000;
+            wait = 1000;
             isDeleting = true;
         }
     }
@@ -26,7 +26,7 @@ function type() {
             wait = 100;
             if (idx < 1) {
                 idx = 1;
-                wait = 800;
+                wait = 500;
                 isDeleting = false;
                 wordIndex++;
                 if (wordIndex >= words.length) {
