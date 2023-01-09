@@ -1,4 +1,4 @@
-const words = ["watermelon", "strawberry", "cherry"];
+const words = ["watermelon", "strawberry", "cherry", "patato", "tomato",  "Dead Man's Finger"];
 const span = document.querySelector('.type');
 let wait;
 let wordIndex = 0;
