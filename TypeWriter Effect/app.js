@@ -1,7 +1,7 @@
-const words = ["first", "second", "third"];
+const words = ["watermelon", "strawberry", "cherry"];
 const span = document.querySelector('.type');
-let wait = 100;
-let wordIndex = 1;
+let wait;
+let wordIndex = 0;
 let isDeleting = false;
 let idx = 0;
 
@@ -24,22 +24,17 @@ function type() {
         span.innerText = word.slice(0, idx);
         if (idx < word.length) {
             wait = 100;
-            if (idx < 1 ) {
+            if (idx < 1) {
                 idx = 1;
                 wait = 800;
                 isDeleting = false;
                 wordIndex++;
-                if(wordIndex >= words.length) {
+                if (wordIndex >= words.length) {
                     wordIndex = 0;
                 }
             }
         }
-        console.log(idx, wait)
     }
-
-
-
-
     setTimeout(type, wait);
 }
 
