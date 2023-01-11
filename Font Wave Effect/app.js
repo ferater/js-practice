@@ -1,10 +1,10 @@
-
-const span = document.querySelector('.line');
-span.innerHTML = span.innerText
+const wave = document.querySelector('.wave');
+wave.innerHTML = wave.innerText
     .split('').map((letter, index) => {
         if (letter == ' ') {
             letter = '&nbsp';
         }
-        return `<span style="animation-delay: ${index * 40}ms;">${letter}</span>`;
+        return `<span style="animation-delay: ${index * 30}ms;">${letter}</span>`;
     })
     .join('');
+

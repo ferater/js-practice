@@ -16,20 +16,22 @@ body {
     background-color: #f9b202;
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
+    position: relative;
 }
 
 .line span {
     text-transform: uppercase;
-    font:bold 72px sans-serif;
+    font: bold 72px sans-serif;
+    line-height: 95px;
 }
 
-.line:hover span{
-    animation: animate .1s ease;
+.line:hover span {
+    animation: animate .05s ease;
 }
 
 @keyframes animate {
-    100%{
+    100% {
         color: red;
         font-size: 95px;
     }
