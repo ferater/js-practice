@@ -1,0 +1,7 @@
+    [
+        { "href": "#", "iconName": "home-outline", "linkText": "home"},
+        { "href": "#", "iconName": "planet-outline", "linkText": "planet"},
+        { "href": "#", "iconName": "bag-outline", "linkText": "shop"},
+        { "href": "#", "iconName": "baseball-outline", "linkText": "sport"},
+        { "href": "#", "iconName": "chatbubble-outline", "linkText": "chat"}
+    ]

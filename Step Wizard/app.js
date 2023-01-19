@@ -4,7 +4,7 @@ const prev = document.querySelector('.prev');
 const next = document.querySelector('.next');
 
 var activeStep = 1;
-init();
+window.onload = init();
 
 next.addEventListener('click', () => {
     activeStep++;
@@ -34,8 +34,8 @@ stepUpdate = () => {
         }
     })
     init();
-    const actives = document.querySelectorAll('.active');
-    const progresslength = ((actives.length - 1) / (steps.length - 1) * 100 ) + '%';
+    const activeSteps = document.querySelectorAll('.active');
+    const progresslength = ((activeSteps.length - 1) / (steps.length - 1) * 100 ) + '%';
     progress.style.width = progresslength;
 }
 

@@ -1,10 +1,11 @@
-const words = ["watermelon", "strawberry", "cherry", "patato", "tomato",  "Dead Man's Finger"];
+const words = ["watermelon", "strawberry", "cherry", "patato", "tomato", "Dead Man's Finger"];
 const span = document.querySelector('.type');
 let wait;
 let wordIndex = 0;
 let isDeleting = false;
 let idx = 0;
 
+window.onload = type();
 
 function type() {
     const current = wordIndex % words.length;
@@ -33,5 +34,3 @@ function type() {
     }
     setTimeout(type, wait);
 }
-
-type();
