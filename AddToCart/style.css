@@ -1,0 +1,118 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(29, 27, 27);
+}
+
+.container {
+    width: 250px;
+    height: 80px;
+    background-color: #fff;
+    position: relative;
+}
+
+.container:hover .sep {
+    transform: translateX(145%);
+}
+
+.sep {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+    left: 10%;
+    top: -50%;
+    border: 8px solid rgb(29, 27, 27);
+    transition: transform .5s ease;
+}
+
+.sep::before,
+.sep::after {
+    content: '';
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    width: 20px;
+    height: 20px;
+}
+
+.sep::before {
+    left: -24.5px;
+    top: 32px;
+    border-top-right-radius: 30px;
+    box-shadow: 2px -7px rgb(29, 27, 27);
+}
+
+.sep::after {
+    right: -24.7px;
+    top: 32px;
+    border-top-left-radius: 30px;
+    box-shadow: -2px -7px rgb(29, 27, 27);
+}
+
+.sep.active {
+    animation: toCart 2s ease-in-out .1s 1;
+}
+
+.btn-container {
+    width: 50%;
+    height: 100px;
+    position: absolute;
+    bottom: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    width: 150px;
+    padding: 15px 0;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+}
+
+.btn:active {
+    transform: scale(.95);
+}
+
+
+@keyframes toCart {
+    0% {
+        left: 0;
+        top: 0;
+    }
+
+    10% {
+        left: 0;
+        top: calc(var(--el-top) * -1);
+    }
+
+    50% {
+        left: calc(var(--el-right));
+        top: calc(var(--el-top) * -1);
+    }
+
+    90% {
+        left: calc(var(--el-right));
+        top: calc(var(--el-top) * -1);
+    }
+
+    100% {
+        left: calc(var(--el-right));
+        top: calc(var(--el-top) * -1);
+        transform: scale(0);
+        opacity: 0;
+    }
+
+}
