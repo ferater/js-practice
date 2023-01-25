@@ -35,29 +35,28 @@ body::after {
 }
 
 .card {
+    width: 300px;
+    height: 450px;
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 300px;
-    height: 450px;
     background-color: rgba(255, 255, 255, 0.199);
     backdrop-filter: blur(10px);
     border-top: 1px solid rgba(255, 255, 255, .3);
     border-left: 1px solid rgba(255, 255, 255, .3);
     border-radius: 10px;
-    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.5);
+    box-shadow: 20px 20px 40px rgba(0, 0, 0, .5),
+    -5px -5px 10px rgba(255, 255, 255, .3);
     display: flex;
     align-items: center;
     overflow: hidden;
-    z-index: 1;
 }
 
 .card .card-title {
     position: absolute;
     top: -30px;
     right: 0px;
-    background-color: transparent;
 }
 
 .card .card-title h1 {

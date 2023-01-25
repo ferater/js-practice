@@ -1,35 +1,35 @@
 class typeWriter {
-    constructor(area, words, wordIndex, typingDelay, erasingDelay, newWordDelay) {
+    constructor(card, area, chars, charIndex, delay) {
+        this.card = card;
         this.area = area;
-        this.words = words;
-        this.wordIndex = wordIndex;
-        this.typingDelay = typingDelay;
-        this.erasingDelay = erasingDelay;
-        this.newWordDelay = newWordDelay;
+        this.chars = chars;
+        this.charIndex = charIndex;
+        this.efectDelay = delay;
         this.isDeleting = false;
         this.word = '';
         this.delay;
     }
 
     type() {
-        const currentIndex = this.wordIndex % this.words.length;
-        const currentWord = this.words[currentIndex];
-        if (!this.isDeleting && this.word.length <= currentWord.length) {
-            this.delay = this.typingDelay;
+        const currentIndex = this.charIndex % this.chars.length;
+        const currentWord = this.chars[currentIndex].name;
+        this.card.style.backgroundImage = `url('${this.chars[currentIndex].img}')`
+        if (!this.isDeleting) {
+            this.delay = this.efectDelay.typingDelay;
             this.word += currentWord.slice(this.word.length, this.word.length + 1);
             if (this.word === currentWord) {
-                this.delay = this.newWordDelay;
+                this.delay = this.efectDelay.newWordDelay;
                 this.isDeleting = true;
             }
         } else {
             if (this.word.length > 0) {
-                this.delay = this.erasingDelay;
+                this.delay = this.efectDelay.erasingDelay;
                 this.word = this.word.slice(0, this.word.length - 1)
             }
             else {
-                this.delay = 700;
+                this.delay = 500;
                 this.isDeleting = false
-                this.wordIndex++
+                this.charIndex++
             }
         }
         this.area.innerHTML = this.word;
@@ -41,28 +41,22 @@ class typeWriter {
 
 
 
-const words = ["eddy gordo", "zafina", "king", "armor king", "hwoarang"];
-const typeArea = document.querySelector('.type-area');
-const typingDelay = 150;
-const erasingDelay = 100;
-const newWordDelay = 2000;
-const wordIndex = 0;
+const chars = [
+    { name: 'eddy gordo', img: './img/eddy.webp' },
+    { name: 'jin kazama', img: './img/jin.webp' },
+    { name: 'kazuya mishima', img: './img/kazuya.webp' },
+];
+const card = document.querySelector('.card');
+const typeArea = card.querySelector('.type-area');
+const delay = {
+    typingDelay: 150,
+    erasingDelay: 50,
+    newWordDelay: 2500,
+}
+const charIndex = 0;
 
-const tw = new typeWriter(typeArea, words, wordIndex, typingDelay, erasingDelay, newWordDelay);
+const tw = new typeWriter(card, typeArea, chars, charIndex, delay);
 window.onload = tw.type();
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // const span = document.querySelector('.type');
 // let wait;
