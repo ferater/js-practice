@@ -1,89 +1,141 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    font-size: 20px;
+}
+
 body {
-    width: 100vw;
-    height: 100vh;
-    background-image: linear-gradient(120deg, rgb(84, 84, 180) 20%, red, rgb(84, 84, 180), #fff);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    background-color: rgba(0, 0, 0, 0.85);
 }
 
-.container {
-    width: 90vw;
-    height: 450px;
-    background: rgba(255, 255, 255, 0.39);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1), inset 0 0 0 2000px rgba(255,255,255,0.08);
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.61);
-    display: flex;
-    align-items: center;
-}
-
-.acordion {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    flex: 0.9;
-    height: 90%;
-    margin-left: -10px;
-    cursor: pointer;
-    border-radius: 10px;
-    position: relative;
-    transition: all .3s ease-in;
-    background-color: #fff;
-    box-shadow: -8px 0 7px -5px rgba(0, 0, 0, 0.808);
-    overflow: hidden;
-}
-
-.acordion:first-child {
-    margin-left: 10px;
-}
-
-.acordion:last-child {
-    margin-right: 10px;
-}
-
-.acordion.active {
-    flex: 4;
-    border-radius: 10px;
-    cursor: default;
-    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.26);
-    margin: 0 20px 0 10px;
-    background-color: transparent;
-    background-image: url('./img/tekken.png');
-    background-position: center;
-
-}
-
-.acordion h3 {
-    padding: 5px;
-    color: #fff;
+body::after {
+    content: '';
     position: absolute;
-    overflow: hidden;
-    opacity: 0;
+    inset: 0;
+    background: url('./img/circles.svg') no-repeat 100% 100% / 40rem;
+}
+
+.col{
+    width: 100%;
+}
+.col-1{
+    width: 8.33%;
+}
+.col-2{
+    width: 16.6%;
+}
+.col-3{
+    width: 25%;
+}
+.col-4{
+    width: 33.2%;
+}
+.col-5{
+    width: 41.65%;
+}
+.col-6{
+    width: 50%;
+}
+.col-7{
+    width: 58.31%;
+}
+.col-8{
+    width: 66,65%;
+}
+.col-9{
+    width: 75%;
+}
+.col-10{
+    width: 83.3%;
+}
+.col-11{
+    width: 92%;
+}
+.col-12{
+    width: 100%;
+}
+.row{
+    display: flex;
+    width: 100%;
+}
+
+.x-center{
+    position: absolute;
+    left: 50%;
+    translate: -50% 0;
+}
+.y-center{
+    position: absolute;
     top: 50%;
-    left: -50%;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 30%, transparent);
-    border-radius: 5px;
-    transition: opacity .35s, left .5s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+    translate: 0 -50%;
 }
 
-.acordion.active h3 {
-    left: 30px;
-    opacity: 1;
-    cursor: pointer;
+.rect-top,
+.rect-bottom {
+    width: 10rem;
+    height: 10rem;
+    position: absolute;
+    border-radius: 50%;
+    background: rgb(248, 78, 171);
+    filter: blur(8rem);
+    backdrop-filter: blur(2rem);
+    opacity: .4;
+    z-index: -1;
 }
 
-@media(max-width:720px){
-    .acordion:nth-child(4), .acordion:nth-child(5){
-        display: none;
-    }
+.rect-top {
+    left: 0;
+    top: 0;
+}
+
+.rect-bottom {
+    right: 5%;
+    bottom: 5%;
+}
+
+.heading{
+    position: relative;
+    top: 3.75rem;
+    display: flex;
+    padding-left: 1.5rem;
+    flex-direction: column;
+    justify-content: center;
+  
+}
+
+.heading::after{
+    content: '';
+    width: 0;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    border: .1rem solid #fff;
+    opacity: .5;
+} 
+.heading h1{
+    color: #fff;
+    font-size: 7.5rem;
+    line-height: 6.5rem;
+}
+.heading h1:last-child{
+    margin-top: 2rem;
+    line-height: 5rem;
+}
+
+.star{
+    width: 4.5rem;
+    height: 8rem;
+    position: absolute;
+    right: 16rem;
+    border-radius: 0 0 2.5rem 2.5rem;
+    background-color: #fff;
 }
