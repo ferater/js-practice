@@ -41,14 +41,14 @@ const personData = [
 const personHtml = personData
   .map((person, index) => {
     return `
-    <div class="person  p-rel">
-        <div class="pic rounded">
+    <div class="person">
+        <div class="pic rounded p-rel">
             <img src="${person.pic}" alt="${person.name}" class="avatar" />
-            </div>
             <div class="social p-abs rounded">
             <span class="iconify icon-star x-g-center y-g-end"
             data-icon="ic:round-star-rate"
           ></span>
+            </div>
             </div>
         <div class="detail">
             <h3>${person.name}</h3>

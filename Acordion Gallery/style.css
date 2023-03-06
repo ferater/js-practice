@@ -113,8 +113,6 @@ main .accordion .person{
     display: flex;
     border-radius: 20rem;
     transition: all .5s ease-in-out;
-    overflow: hidden;
-
 }
 main .accordion .person:not(:last-child) {
     margin-right: -9rem;
@@ -141,11 +139,18 @@ main .accordion .person .pic .social{
     z-index: 999;
 }
 
+
 main .accordion .person .detail {
-    width: 20rem;
-    height: 20rem;
+    width: 0;
+    height: 0;
     font-family: 'Roboto', sans-serif;
     padding: 2.5rem 0 0 2.25rem;
+    
+}
+main .accordion .person.active .detail {
+    width: 25rem;
+    height: 16rem;
+    overflow: hidden;
 }
 main .accordion .person .detail:not(.person.active .detail) {
     display: none;
