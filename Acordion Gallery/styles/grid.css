@@ -1,0 +1,114 @@
+.row {
+    width: 100%;
+}
+
+.col {
+    width: 100%;
+}
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.6%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.2%;
+}
+
+.col-5 {
+    width: 41.65%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.31%;
+}
+
+.col-8 {
+    width: 66, 65%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.3%;
+}
+
+.col-11 {
+    width: 92%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.d-grid {
+    display: grid;
+}
+
+.p-rel {
+    position: relative;
+}
+
+.p-abs {
+    position: absolute;
+}
+
+.x-center {
+    position: absolute;
+    left: 50%;
+    translate: -50% 0;
+}
+
+.x-end {
+    position: absolute;
+    right: 0;
+}
+
+.y-center {
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+}
+
+.y-end {
+    position: absolute;
+    bottom: 0;
+}
+
+.x-g-center {
+    justify-self: center;
+}
+
+.x-g-end {
+    justify-self: end;
+}
+
+.y-g-center {
+    align-self: center;
+}
+
+.y-g-end {
+    align-self: end;
+}
+
+/* shapes */
+.rounded {
+    border-radius: 50%;
+}

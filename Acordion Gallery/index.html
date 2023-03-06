@@ -1,32 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>acordion Gallery</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="app.js" defer></script>
-</head>
+  </head>
 
-<body>
-
-   <div id="app">
-        <div class="rect-top"></div>
-        <div class="rect-bottom"></div>
-            <div class="row">
-                <div class="col-2"></div>
-                <div class="heading col-4">
-                    <h1>profile</h1>
-                    <h1>accordion</h1>
-                </div>
-                <div class="col-8" >
-                    <div class="star"></div>
-                </div>
+  <body>
+    <div id="app" class="d-grid">
+      <div class="blur-top"></div>
+      <div class="blur-bottom"></div>
+      <header class="d-grid">
+        <div class="spacer"></div>
+        <div class="heading p-rel">
+          <h1>profile</h1>
+          <h1>accordion</h1>
+        </div>
+        <div class="star d-grid">
+          <span
+            class="iconify icon-star x-g-center y-g-end"
+            data-icon="ic:round-star-rate"
+          ></span>
+        </div>
+      </header>
+      <div class="spacer"></div>
+      <main class="d-grid">
+        <div class="accordion x-g-end d-flex">
+          <!-- <div class="person">
+            <div class="pic">
+              <img src="./img/person-0.png" alt="" class="avatar" />
             </div>
-   </div>
-
-</body>
-
+            <div class="detail">
+                <h3>Gary Lee</h3>
+                <span class="sub-header">Product Designer at Figma</span>
+                <p>A product designer is responsible for exploring product problems, developing design solutions that solve these problems and implementing ...</p>
+            </div>
+          </div>-->
+        </div>
+      </main>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iconify/2.0.0/iconify.min.js"></script>
+  </body>
 </html>

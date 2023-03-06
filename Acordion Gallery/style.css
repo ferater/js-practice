@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400&display=swap');
+@import './styles/grid.css';
+
+:root {
+    --avatar-size: 18rem;
+}
 
 *,
 *::before,
@@ -22,65 +27,11 @@ body::after {
     position: absolute;
     inset: 0;
     background: url('./img/circles.svg') no-repeat 100% 100% / 40rem;
+    z-index: -1;
 }
 
-.col{
-    width: 100%;
-}
-.col-1{
-    width: 8.33%;
-}
-.col-2{
-    width: 16.6%;
-}
-.col-3{
-    width: 25%;
-}
-.col-4{
-    width: 33.2%;
-}
-.col-5{
-    width: 41.65%;
-}
-.col-6{
-    width: 50%;
-}
-.col-7{
-    width: 58.31%;
-}
-.col-8{
-    width: 66,65%;
-}
-.col-9{
-    width: 75%;
-}
-.col-10{
-    width: 83.3%;
-}
-.col-11{
-    width: 92%;
-}
-.col-12{
-    width: 100%;
-}
-.row{
-    display: flex;
-    width: 100%;
-}
-
-.x-center{
-    position: absolute;
-    left: 50%;
-    translate: -50% 0;
-}
-.y-center{
-    position: absolute;
-    top: 50%;
-    translate: 0 -50%;
-}
-
-.rect-top,
-.rect-bottom {
+.blur-top,
+.blur-bottom {
     width: 10rem;
     height: 10rem;
     position: absolute;
@@ -92,50 +43,133 @@ body::after {
     z-index: -1;
 }
 
-.rect-top {
+.blur-top {
     left: 0;
     top: 0;
 }
 
-.rect-bottom {
+.blur-bottom {
     right: 5%;
     bottom: 5%;
 }
 
-.heading{
-    position: relative;
-    top: 3.75rem;
-    display: flex;
-    padding-left: 1.5rem;
-    flex-direction: column;
-    justify-content: center;
-  
+.avatar {
+    width: var(--avatar-size);
+    height: var(--avatar-size);
+    border-radius: 50%;
+    border: .5rem solid #fff;
+    position: absolute;
+    object-fit: cover;
+    background-color: #fff;
 }
 
-.heading::after{
+#app {
+    grid-template-rows: 18.5rem 5.5rem 18rem 5.8rem;
+}
+
+header {
+    grid-template-columns: 15.25rem auto 4.5rem 15.8rem;
+}
+
+header .heading {
+    margin-top: 5rem;
+    padding-left: 2rem;
+}
+
+header .heading::after {
     content: '';
-    width: 0;
-    height: 100%;
     position: absolute;
+    top: 0;
+    bottom: 0;
     left: 0;
-    border: .1rem solid #fff;
-    opacity: .5;
-} 
-.heading h1{
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+header .heading h1 {
     color: #fff;
     font-size: 7.5rem;
     line-height: 6.5rem;
 }
-.heading h1:last-child{
+
+.heading h1:last-child {
     margin-top: 2rem;
     line-height: 5rem;
 }
 
-.star{
-    width: 4.5rem;
-    height: 8rem;
-    position: absolute;
-    right: 16rem;
+header .star {
+    height: 7.5rem;
     border-radius: 0 0 2.5rem 2.5rem;
     background-color: #fff;
+}
+
+header .star .icon-star {
+    color: #000;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+main .accordion .person{
+    width: 18rem;
+    display: flex;
+    border-radius: 20rem;
+    transition: all .5s ease-in-out;
+    overflow: hidden;
+
+}
+main .accordion .person:not(:last-child) {
+    margin-right: -9rem;
+}
+
+main .accordion .person.active {
+    width: 55rem;
+    height: 18rem;
+    display: flex;
+    border-radius: 20rem;
+    background-color: #fff;
+}
+
+main .accordion .person .pic {
+    width: var(--avatar-size);
+    height: var(--avatar-size);
+}
+main .accordion .person .pic .social{
+    width: 2rem;
+    height: 2rem;
+    background-color: #000;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+}
+
+main .accordion .person .detail {
+    width: 20rem;
+    height: 20rem;
+    font-family: 'Roboto', sans-serif;
+    padding: 2.5rem 0 0 2.25rem;
+}
+main .accordion .person .detail:not(.person.active .detail) {
+    display: none;
+}
+
+main .accordion .person .detail h3 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 105%;
+    letter-spacing: -0.02em;
+    color: #333333;
+}
+
+main .accordion .person .detail span.sub-header {
+    font-weight: 400;
+    font-size: .85rem;
+    line-height: 150%;
+    color: #686868;
+}
+
+main .accordion .person .detail p {
+    margin-top: 1.3rem;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 150%;
+    color: #464646;
 }
