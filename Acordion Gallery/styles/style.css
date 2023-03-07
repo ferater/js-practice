@@ -99,6 +99,10 @@ header .star {
     height: 7.5rem;
     border-radius: 0 0 2.5rem 2.5rem;
     background-color: var(--white);
+    transition: height .3s ease;
+}
+header .star:hover {
+    height: 10rem;
 }
 
 header .star .icon-star {
@@ -138,6 +142,7 @@ main .accordion .person .pic .social {
     background-color: var(--white);
     bottom: 0;
     left: 0;
+    box-shadow: 0 0 .3rem var(--black);
 }
 
 main .accordion .person .pic .social .icon-social{
